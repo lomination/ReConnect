@@ -1,6 +1,12 @@
 name: Build For All Plateforms
 
 on:
+  workflow_dispatch:
+    inputs:
+      versionName:
+        description: 'Version name (present in the name of the built artifacts)'
+        required: false
+        type: string
   workflow_call:
     inputs:
       versionName:
