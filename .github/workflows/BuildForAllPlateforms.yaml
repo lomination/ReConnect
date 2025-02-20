@@ -30,6 +30,12 @@ jobs:
           - { plateformName: StandaloneLinux64, buildName: Server } # Build a Linux 64-bit standalone.
     
     steps:
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
       # Set the version name
       - name: Set Default Version Name
         id: version
@@ -43,12 +49,6 @@ jobs:
           else
             echo "VERSION_NAME=${{ inputs.versionName }}" >> $GITHUB_ENV
           fi
-      # Checkout the repository
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          lfs: true
       # Cache libraries
       - name: Cache the libraries
         uses: actions/cache@v3
