@@ -42,7 +42,7 @@ jobs:
               ref: '${{ inputs.versionName }}',
             })
       - call-workflow-passing-data:
-          uses: lomination/ReConnect/.github/workflows/BuildForAllPlateforms.yaml@main
-          with:
-            versionName: ${{ inputs.versionName }}
-          secrets: inherit
+        uses: lomination/ReConnect/.github/workflows/BuildForAllPlateforms.yaml@main
+        with:
+          versionName: ${{ inputs.versionName }}
+        secrets: inherit
