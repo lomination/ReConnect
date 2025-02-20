@@ -44,6 +44,7 @@ jobs:
 
   call-build-workflow:
     name: Build
+    needs: prepare-release
     uses: lomination/ReConnect/.github/workflows/BuildForAllPlateforms.yaml@main
     with:
       versionName: ${{ inputs.versionName }}
